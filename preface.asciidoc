@@ -53,41 +53,41 @@ _++고정폭 이탤릭++_:: 사용자 제공 값 또는 문맥에 의해 결정�
 
 === 코드 예제
 
-((("code examples, obtaining and using", id="codeuse00")))The examples are illustrated in Python, C++, and using the command line of a Unix-like operating system such as Linux or macOS. All code snippets are available in the https://github.com/aantonop/bitcoinbook[GitHub repository] in the _code_ subdirectory of the main repo. Fork the book code, try the code examples, or submit corrections via GitHub.
+((("code examples, obtaining and using", id="codeuse00"))) 예제는 Python, C++ 및 Linux 또는 macOS같은 Unix계열 운영체제의 명령줄을 사용하여 설명합니다. 모든 코드 조각은 메인 저장소의 _코드_ 하위 디렉토리 안의 https://github.com/aantonop/bitcoinbook[GitHub저장소]에서 사용 할 수 있다. 책 코드를 포크하고 예제를 테스트하거나 GitHub를 통해 수정사항을 제출 하세요. 
 
-All the code snippets can be replicated on most operating systems with a minimal installation of compilers and interpreters for the corresponding languages. Where necessary, we provide basic installation instructions and step-by-step examples of the output of those instructions.
+모든 코드 조각은 해당 언어의 컴파일러와 인터프리터의 설치를 최소화하고 대부분의 운영 체제에서 복제 할 수 있다. 필요에 따라 기본적인 설치 방법, 그 명령의 출력 단계별 예제를 준다.
 
-Some of the code snippets and code output have been reformatted for print. In all such cases, the lines have been split by a backslash (\) character, followed by a newline character. When transcribing the examples, remove those two characters and join the lines again and you should see identical results as shown in the example.
+일부 코드 조각과 코드 출력은 인쇄용으로 다시 포맷 되었다. 이 경우 줄은 백 슬래시(\) 문자와 줄 바꿈 문자로 구분된다. 예제를 베껴 쓸때 두 문자를 제거하고 행을 다시 결합하면 예제외 같은 결과가 나타난다.
 
-All the code snippets use real values and calculations where possible, so that you can build from example to example and see the same results in any code you write to calculate the same values. For example, the private keys and corresponding public keys and addresses are all real. The sample transactions, blocks, and blockchain references have all been introduced in the actual bitcoin blockchain and are part of the public ledger, so you can review them on any bitcoin system.
+모든 코드 조각각은 가능한 한 실제 갑솨 계산을 사용하고 있기 때문에 예제로 예제를 빌드하고 작성한 모든 코드에서 동일한 결과를 보고 동일한 값을 계산 할 수 있다. 예를 들어 개인키와 해당 공개키는 모두 실제다. 샘플 트랜잭션, 블록 및 블록체인 참조는 모두 실제 비트코인 블록 체인에 도입 되었으며, 공용 원장의 일부 이므로 비트코인 시스템에서 확인 할 수 있다.
 
-=== Using Code Examples
+===  코드 예제 사용
 
-This book is here to help you get your job done. In general, if example code is offered with this book, you may use it in your programs and documentation. You do not need to contact us for permission unless you’re reproducing a significant portion of the code. For example, writing a program that uses several chunks of code from this book does not require permission. Selling or distributing a CD-ROM of examples from O’Reilly books does require permission. Answering a question by citing this book and quoting example code does not require permission. Incorporating a significant amount of example code from this book into your product’s documentation does require permission.
+이 책은 당신의 job을 완성 할 수 있도록 도와준다. 일반적으로, 이 설명서에서는 샘플 코드가 제공되어 있으면 프로그램이나 문서에서 사용할 수 있다. 코드의 대 부분을 복제하지 않는 한 허가를 위해 우리에게 연락 할 필요가 없다. 예를 들어, 이 책의 코드를 일부 사용하는 프로그램을 만들려면 허가가 필요하지 않다. O'Reilly 책에서 CD-ROM을 판매하거나 배부하려면 권한이 필요하다. 이 책을 인용하고 예제 코드를 인용하여 질문에 답하는 것은 허가가 필요하지 않다.
 
-((("attribution")))We appreciate, but do not require, attribution. An attribution usually includes the title, author, publisher, and ISBN. For example: “_Mastering Bitcoin_ by Andreas M. Antonopoulos (O’Reilly). Copyright 2017 Andreas M. Antonopoulos, 978-1-491-95438-6.”
+((("attribution")))우리는 당신의 기여에 감사하지만 필요하지 않다. 저작자 표시에는 일반적으로 제목,저자,발행인 및 ISBN이 포함된다. 
+예르 들면:“Mastering Bitcoin by Andreas M. Antonopoulos (O’Reilly). Copyright 2017 Andreas M. Antonopoulos, 978-1-491-95438-6.”
 
-((("open source licenses")))Some editions of this book are offered under an open source license, such as https://creativecommons.org/licenses/by-nc/4.0/[CC-BY-NC], in which case the terms of that license apply.
+이 책의 일부 판은 https://creativecommons.org/licenses/by-nc/4.0/[CC-BY-NC]와 같은 오픈소스 라이선스에 따라 제공되며, 이 경우 라이선스의 조건이 적용된다. 코드 예제가 공정 사용 또는 위의 권한 밖에 있는 것으로 보인 다면 pass:[<a href="mailto:permissions@oreilly.com">permissions@oreilly.com</a>] 으로 언제든지 문의해라.
 
-If you feel your use of code examples falls outside fair use or the permission given above, feel free to contact us at pass:[<a href="mailto:permissions@oreilly.com">permissions@oreilly.com</a>].
+=== 이 책이 Bitcoin 주소(Addresses) 와 트랜잭션들(Transactions)
 
-=== Bitcoin Addresses and Transactions in This Book
+((("getting started", "warnings and cautions")))((("warnings and cautions", "avoid sending money to addresses appearing in book")))((("keys and addresses", "warnings and cautions")))((("transactions", "warnings and cautions")))((("blockchain applications", "warnings and cautions")))((("QR codes", "warnings and cautions"))) 이 책에서 사용된 bitcoin address, transactions, keys, QR코드, 블럭체인(blockchain) 데이터는 대 부분 실제 데이타다. 즉 블럭 체인을 검색할 수 있고, 예제로 제공된 트랜잭션을 살펴보고, 자신의 스크립트나 프로그램 등을 사용하여 트랜잭션을 검색 할 수 있다. 
 
-((("getting started", "warnings and cautions")))((("warnings and cautions", "avoid sending money to addresses appearing in book")))((("keys and addresses", "warnings and cautions")))((("transactions", "warnings and cautions")))((("blockchain applications", "warnings and cautions")))((("QR codes", "warnings and cautions")))The bitcoin addresses, transactions, keys, QR codes, and blockchain data used in this book are, for the most part, real. That means you can browse the blockchain, look at the transactions offered as examples, retrieve them with your own scripts or programs, etc.
+그러나 주소를 구성하는 데 사용되는 비밀 키는 이 책에 인쇄되어 있거나 "사용됨" 을 절대로 유의 하라.
+즉 이 주소 중 하나에 돈을 보내는 경우, 그 돈은 영원히 사라지거나 이 책을 읽을 수 있는 모든 사람들은 여기에 인쇄된 개인키를 사용하고 돈을 가져갈 수도 있다.
 
-However, note that the private keys used to construct addresses are either printed in this book, or have been "burned." That means that if you send money to any of these addresses, the money will either be lost forever, or in some cases everyone who can read the book can take it using the private keys printed in here.
-
-[WARNING]
+[주의]
 ====
-DO NOT SEND MONEY TO ANY OF THE ADDRESSES IN THIS BOOK. Your money will be taken by another reader, or lost forever.((("", startref="codeuse00")))
+이 책의 주소 중 어느 곳에도 돈을 보내지 마라. 당신의 돈은 다른 독자가 가져가거나 영원히 잃어 버리게 된다..((("", startref="codeuse00")))
 ====
 
 === O'Reilly Safari
 
 [role = "safarienabled"]
-[NOTE]
+[참고]
 ====
-pass:[<a href="http://oreilly.com/safari" class="orm:hideurl"><em class="hyperlink">Safari</em></a>] (formerly Safari Books Online) is a membership-based training and reference platform for enterprise, government, educators, and individuals.
+pass:[<a href="http://oreilly.com/safari" class="orm:hideurl"><em class="hyperlink">Safari</em></a>] (이전의 Safari Books Online)  는 기업, 정부, 교육자 및 개인을위한 회원 기반의 교육 및 참조 플랫폼이다.
 ====
 
 Members have access to thousands of books, training videos, Learning Paths, interactive tutorials, and curated playlists from over 250 publishers, including O’Reilly Media, Harvard Business Review, Prentice Hall Professional, Addison-Wesley Professional, Microsoft Press, Sams, Que, Peachpit Press, Adobe, Focal Press, Cisco Press, John Wiley & Sons, Syngress, Morgan Kaufmann, IBM Redbooks, Packt, Adobe Press, FT Press, Apress, Manning, New Riders, McGraw-Hill, Jones & Bartlett, and Course Technology, among others.
